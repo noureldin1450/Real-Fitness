@@ -1,0 +1,415 @@
+
+/*
+            Made by : NOUR ELDIN CODE
+ 
+            ╔══╗ 
+            ╚╗╔╝
+            ╔╝╚(¯`v´¯)Coding 
+            ╚══ `.¸.´   THIS WEBSITE MADE BY LOVE ( ͡° ͜ʖ ͡°)
+*/
+
+
+/* 
+    import more style 
+*/
+
+/*animation file*/
+@import 'animation.scss';
+
+/*reset file*/
+@import 'reset.scss';
+
+/**/
+    /** Website Font import **/
+
+    /**  More font for backup
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+    
+    font-family: 'Montserrat', sans-serif; 
+    
+    **/
+
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap');
+    /** font-family: 'Noto Sans', sans-serif; **/
+
+/**/
+
+/*responsive*/
+
+$laptop:  1200px;
+$tap:  1068px;
+$mobile:  700px;
+$small-mobile:  480px;
+
+@mixin laptop {
+    @media (max-width: #{$laptop}) {
+        @content;
+    }
+}
+@mixin tap {
+    @media (max-width: #{$tap}) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+@mixin small-mobile {
+    @media (max-width: #{$small-mobile}) {
+        @content;
+    }
+}
+
+
+/* 
+    Website Main Style Code 
+*/
+
+.container{
+    width: 80%;
+    margin: auto;
+
+    @include tap(){
+        width: 90%;
+    }
+}
+section{
+    height: 600px;
+    margin: 1rem 0px;
+
+    @include mobile(){
+        height: 100%;
+    }
+}
+
+/*
+    Nav bar style
+*/
+
+nav{
+    width: 100%;
+    height: 3.8rem;
+    background-color: #421866;
+    position: fixed;
+    z-index: 2;
+
+    @include small-mobile(){
+        text-align: center;
+        height: 6rem;
+    }
+    
+    .navigation{
+        float: right;
+
+        @include small-mobile(){
+            float: none;
+        }
+        
+        a{
+            transition-timing-function: ease;
+            transition: .2s;
+            font-size: .9rem;
+            text-transform: capitalize;
+            
+            &:hover{
+                transition: .2s;
+                font-size: 1rem;
+            }
+        }
+    }
+    li{
+        display: inline-block;
+        margin: 1rem 1rem 0px 0px;
+        &:last-child{
+            margin: 1rem 0em 0px 0px;
+        }
+        a{
+            color: whitesmoke;
+            text-decoration: none;
+        }
+    }
+    
+    .logo{
+        a{
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+/*
+    Header style
+*/
+
+header{
+    width: 100%;
+    height: 100vh;
+
+    @include mobile(){
+        text-align: center;
+    }
+
+    img{
+        float: right;
+        max-width: 40%;
+        padding: 6rem 0px; 
+
+        @include mobile(){
+            display: none;
+        }
+    }
+
+    .content{
+        float: left;
+        width: 60%;
+        padding: 13rem 0px 0px 0px;
+
+        @include mobile(){
+            width: 100%;
+            padding-top: 14rem;
+        }
+
+        @include small-mobile(){
+            padding-top: 13rem;
+        }
+
+        h1{
+            letter-spacing: 1px;
+            font-size: 2.5rem;
+
+            @include small-mobile(){
+                font-size: 2rem;
+            }
+        }
+
+        p{
+            font-size: .9rem;
+            line-height: 1.5rem;
+            font-weight: 500;
+            margin: 1.5rem 0px;
+
+            @include mobile(){
+                margin: 2rem 0px;
+            }
+            @include small-mobile(){
+                margin: 2.4rem 0px;
+            }
+        }
+
+        .btn{
+
+            a{
+                color: #421866;
+                border: 2px solid #421866;
+                padding: .3em 30px;
+                font-weight: 900;
+                border-radius: 3px;
+                margin: 0px .5em 0px 0px;
+                font-size: .9em;
+                transition: .4s;
+
+                &:hover{
+                    color: whitesmoke;
+                    background-color: #421866;
+                }
+            }
+        }
+    }
+}
+
+/*
+    About style
+*/
+
+#about{
+    width: 100%;
+    
+    @include mobile(){
+        text-align: center;
+    }
+
+    img{
+        float: left;
+        max-width: 35%;
+
+        @include mobile(){
+            max-width: 50%;
+            float: none;
+        }
+    }
+
+    p{
+        float: right;
+        padding: 10rem 0px;
+        max-width: 60%;
+
+        @include mobile(){
+            float: none;
+            padding: 2rem 0px;
+            max-width: 100%;
+        }
+
+        @include small-mobile(){
+            font-size: .9rem;
+        }
+
+        a{
+            text-decoration-color: #421866;
+            color: #421866;
+            padding: 0px 10px;
+            font-weight: 600;
+        }
+    }
+
+    .content{
+        padding: 0px;
+    }
+}
+/*
+    mempershipe
+*/
+#memberships{
+    text-align: center;
+    margin: auto;
+    width: 90%;
+
+    ul{
+        background-color: #F1F1F1;   
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.20);
+        height: 500px; 
+        width: 27%;
+        text-align: center;
+        margin: 1rem 1rem;
+        float: left;
+        
+        @include laptop(){
+            width: 25%;
+            margin: 1rem 2rem;
+        }
+        
+        @include mobile(){
+            width: 50%;
+            float: none;
+            margin: 3rem auto;
+        }
+
+        @include small-mobile(){
+            width: 80%;
+        }
+        li{
+            display: block;
+            background-color: #421866;
+            margin: 20px 0px;
+            padding: 1em 0px;
+            height: 1em 0px;
+
+            a{
+
+                color: whitesmoke;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 11px;
+                cursor: text;
+            }
+        }
+    }
+    h1,span{
+        color: #421866;
+    }
+    h1{
+        font-size: 3em;
+        padding: .9em 0px .5em 0px;
+    }
+    span{
+        font-size: 13px;
+        float: right;
+        padding: 1.5em 5em 0px 0px;
+    }
+}
+/*
+    Footer
+*/
+
+.contact{
+    background-color: #421866;
+    height: 500px;
+    float: left;
+    width: 40%;
+
+    @include laptop(){
+        width: 35%;
+    }
+    @include tap(){
+        width: 25%;
+    }
+    @include mobile(){
+        width: 100%;
+        height: 300px;
+        margin: 1rem 0px;
+    }
+    
+    h1,a{
+        color: map-get($colors, white-color);
+    }
+    h1{
+        padding: 2em 0em 1em .5em;
+
+        @include mobile(){
+            font-size: 1.5rem;
+        }
+    }
+
+    a{
+        display: block;
+        font-weight: 500;
+        /*padding: .5em 1em;*/
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 20px;
+        margin: 1em 1em;
+
+        @include mobile(){
+            font-size: 1rem;
+        }
+    }
+}
+footer{
+    margin-top: 7em;
+
+    @include mobile(){
+        margin: 0px;
+    }
+
+    .map{
+        width: 50%;
+
+        @include laptop(){
+            width: 70%;
+        }
+
+        @include mobile(){
+            width: 100%;
+        }
+    }
+}
+
+.owner{
+    text-align: center;
+    clear: both;
+
+    h4,a{
+        padding: 1rem 0px;
+        color: rgba(0, 0, 0, .7);
+        font-size: .9rem;
+    }
+    a{
+        text-decoration: underline;
+    }
+}
+
+
+
